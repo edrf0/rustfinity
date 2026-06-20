@@ -1,13 +1,18 @@
 pub fn add_elements(vec: &mut Vec<i32>, elements: &[i32]) {
     // Your code here
+    for element in elements {
+        vec.push(*element);
+    }
 }
 
 pub fn remove_element(vec: &mut Vec<i32>, index: usize) {
     // Your code here
+    vec.remove(index);
 }
 
 pub fn get_element(vec: &Vec<i32>, index: usize) -> Option<i32> {
     // Your code here
+    vec.get(index)
 }
 
 // Example usage
