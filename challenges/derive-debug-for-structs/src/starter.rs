@@ -2,9 +2,21 @@
 // have a look at the function below `debug_example` to get the fields of the structs.
 //
 // 2. Make sure you implement the Debug trait for each struct. using the derive attribute.
-pub struct Person {}
-pub struct Point {}
-pub struct Rectangle {}
+#[derive(Debug)]
+pub struct Person {
+    name: String,
+    age: i32,
+}
+#[derive(Debug)]
+pub struct Point {
+    x: f32,
+    y: f32,
+}
+#[derive(Debug)]
+pub struct Rectangle {
+    width: f32,
+    height: f32,
+}
 
 // Example function
 pub fn debug_example() {
