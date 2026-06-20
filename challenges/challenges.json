@@ -1,17 +1,5 @@
 [
   {
-    "id": 30,
-    "title": "The Unit Type",
-    "slug": "the-unit-type",
-    "short_description": "Understand and use the unit type `()` in Rust.",
-    "language": "RUST",
-    "difficulty": "BEGINNER",
-    "track": "RUST_BASICS",
-    "tags": ["unit type", "basic operations"],
-    "created_at": "2024-06-12T00:00:00Z",
-    "updated_at": "2024-06-12T00:00:00Z"
-  },
-  {
     "id": 31,
     "title": "Functions",
     "slug": "functions",
