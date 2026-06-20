@@ -1,5 +1,10 @@
 // Finish the enum definition
-pub enum OrderStatus {}
+#[derive(PartialEq)]
+pub enum OrderStatus {
+    Pending,
+    Shipped,
+    Cancelled(String),
+}
 
 // Example use case
 pub fn main() {
