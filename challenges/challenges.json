@@ -1,17 +1,5 @@
 [
   {
-    "id": 29,
-    "title": "Tuples",
-    "slug": "tuples",
-    "short_description": "Create a function that returns a tuple of values.",
-    "language": "RUST",
-    "difficulty": "BEGINNER",
-    "track": "RUST_BASICS",
-    "tags": ["tuples", "basic operations"],
-    "created_at": "2024-06-12T00:00:00Z",
-    "updated_at": "2024-06-12T00:00:00Z"
-  },
-  {
     "id": 30,
     "title": "The Unit Type",
     "slug": "the-unit-type",
