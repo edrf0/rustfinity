@@ -1,17 +1,5 @@
 [
   {
-    "id": 23,
-    "title": "Mutable Variables",
-    "slug": "mutable-variables",
-    "short_description": "Define and modify mutable variables in Rust.",
-    "language": "RUST",
-    "difficulty": "BEGINNER",
-    "track": "RUST_BASICS",
-    "tags": ["variables", "mutability"],
-    "created_at": "2024-06-08T00:00:00Z",
-    "updated_at": "2024-06-08T00:00:00Z"
-  },
-  {
     "id": 24,
     "title": "Constants",
     "slug": "constants",

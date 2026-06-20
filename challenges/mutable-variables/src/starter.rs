@@ -4,6 +4,9 @@ pub fn mutating_variables() -> String {
     // 2. Call `mutates_value` with a mutable reference to `text`
 
     // 3. Return the value of `text` as a String
+    let mut text = "hello";
+    mutates_value(&mut text);
+    text.to_string()
 }
 
 // Do not change this function
