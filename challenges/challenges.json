@@ -1,17 +1,5 @@
 [
   {
-    "id": 2,
-    "title": "Character counting string",
-    "slug": "character-counting-string",
-    "short_description": "Write a program that takes a string as input and counts the number of characters in the string.",
-    "language": "RUST",
-    "difficulty": "BEGINNER",
-    "track": "RUST_BASICS",
-    "tags": [],
-    "created_at": "2024-04-20T00:00:00Z",
-    "updated_at": "2024-04-20T00:00:00Z"
-  },
-  {
     "id": 37,
     "title": "Slices",
     "slug": "slices",
