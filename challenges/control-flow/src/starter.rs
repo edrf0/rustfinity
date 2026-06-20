@@ -5,10 +5,15 @@ pub fn check_number_sign(number: i32) -> String {
 
     // Step 1:
     // Check if the number is positive.
-
+    if number > 0 {
+        "positive".to_string()
+    }
     // Step 2:
     // Check if the number is negative.
-
+    if number < 0 {
+        "negative".to_string()
+    }
     // Step 3:
     // Handle the case where it's neither positive nor negative.
+    "zero".to_string()
 }
