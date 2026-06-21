@@ -2,6 +2,14 @@ use std::thread;
 
 pub fn concurrent_add<T>(items: Vec<T>, num: T) -> Vec<thread::JoinHandle<T>> {
     // Implement the function here
+    let handle_vector = Vec::new();
+    for item in items {
+        let handle = thread::spawn(move || {
+            item + num
+        });
+        handle_vector.push(handle);
+    }
+    handle_vector
 }
 
 // Example Usage
