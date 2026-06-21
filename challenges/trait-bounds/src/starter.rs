@@ -1,5 +1,13 @@
+use std::fmt::Display;
+
 // TODO: Define the generic function `compare_and_display` with appropriate trait bounds.
-pub fn compare_and_display // Complete the function definition
+pub fn compare_and_display<T: PartialOrd + Display>(a:T,b:T) -> T {
+     if a > b {
+          a
+     } else {
+          b
+     }
+} // Complete the function definition
 
 // Example usage
 pub fn main() {
