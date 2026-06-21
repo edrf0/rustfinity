@@ -1,5 +1,11 @@
 pub fn get_database_url() -> String {
     // Your code here...
+    let database_url = env::var("DATABASE_URL");
+    match database_url {
+        Ok(url) if url.contains("postgresql://") => url,
+        Ok(_) => panic!("DATABASE_URL must start with 'postgresql://'"),
+        Err(_) => panic!("DATABASE_URL environment variable is not set."),
+    }
 }
 
 /// Example usage
