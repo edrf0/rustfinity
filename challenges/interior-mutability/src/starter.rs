@@ -3,14 +3,31 @@ use std::rc::Rc;
 
 pub fn push<T>(data: Rc<RefCell<Vec<T>>>, element: T) {
     // 1. Finish the function
+    /*
+    Accept an Rc<RefCell<Vec<T>>> as input.
+    Append an element to the shared vector inside the RefCell.
+    */
+    data.borrow_mut().push(element);
 }
 
 pub fn iterate_and_print_shared_data<T>(data: Rc<RefCell<Vec<T>>>) {
     // 2. Borrow the data and print each item
+    /*
+    Take an Rc<RefCell<Vec<T>>> as input.
+    Iterate through the vector and print each element.
+    */
+    for element in data.borrow().iter() {
+        println!("{}", element);
+    }
 }
 
 pub fn plus_one(data: Rc<RefCell<i32>>) {
     // 3. Finish the function
+    /*
+    Accept an Rc<RefCell<i32> as input.
+    Increment the value inside the RefCell by one.
+    */
+    data.borrow_mut() += 1;
 }
 
 // Example usage

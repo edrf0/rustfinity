@@ -1,7 +1,21 @@
+/*Implement the functions use_shared_data and share_data_to_other_functions to work with Rc<T>.
+
+use_shared_data:
+
+Take an Rc<Vec<T>> as argument.
+Loop over each item in the vector and print each element using println!.
+share_data_to_other_functions:
+
+Share the input as a reference-counted pointer 3 times with the given closure.
+Do cheap clones only and avoid deep copying the data.*/
+
 use std::rc::Rc;
 
 pub fn use_shared_data<T>(data: Rc<Vec<T>>) {
     // 1. Loop over each item in the vector and print it using `println!`
+    for element in *data.iter() {
+        println!("{}", element);
+    }
 }
 
 pub fn share_data_to_other_functions<F>(mut take_item: F, items: Vec<String>)
@@ -10,6 +24,9 @@ where
 {
     // 2. Implement the function
     // Share the data as a reference-counted pointer 3 times with the closure
+    for element in items.iter() {
+        take_item(Rc::clone(element));
+    }
 }
 
 // Example usage
