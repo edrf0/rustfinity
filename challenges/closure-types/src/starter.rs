@@ -1,14 +1,22 @@
+/*Implement the following closures and their respective behaviors:
+
+calculate_total: An Fn closure that calculates the total price of an item, including tax
+(price + price * tax_rate).
+apply_discount: An FnMut closure that mutates the cart total by subtracting a given discount.
+checkout_cart: An FnOnce closure that consumes the cart's details (a String) and
+returns a confirmation message.*/
+
 // 1. Based on the `main` function below,
 // Find out the types of the closures and define them
 pub fn create_typed_closures() {
     // 2. Implement calculate_total closure here
-    let calculate_total = || {};
+    let calculate_total = |price,tax_rate| {price + price * tax_rate};
 
     // 3. Implement apply_discount closure here
-    let apply_discount = || {};
+    let apply_discount = |price,discount_amount| {price -= discount_amount};
 
     // 4. Implement checkout_cart closure here
-    let checkout_cart = || {};
+    let checkout_cart = |details| {format!("Checkout complete: {}",details);};
 
     (calculate_total, apply_discount, checkout_cart)
 }
