@@ -1,41 +1,5 @@
 [
   {
-    "id": 54,
-    "title": "Student Grades Tracker",
-    "slug": "student-grades-tracker",
-    "short_description": "Manage student grades using structs and hashmaps without error handling.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": [
-      "structs",
-      "hashmaps",
-      "impl block",
-      "mutable references",
-      "immutable references"
-    ],
-    "created_at": "2024-12-30T00:00:00Z",
-    "updated_at": "2024-12-30T00:00:00Z"
-  },
-  {
-    "id": 55,
-    "title": "Student Grades Tracker 2",
-    "slug": "student-grades-tracker-2",
-    "short_description": "Extend the student grades system with methods inside the Student struct.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": [
-      "structs",
-      "hashmaps",
-      "methods",
-      "mutable references",
-      "immutable references"
-    ],
-    "created_at": "2024-12-30T00:00:00Z",
-    "updated_at": "2024-12-30T00:00:00Z"
-  },
-  {
     "id": 56,
     "title": "Using Option<T> for Optional Values",
     "slug": "optional-values",

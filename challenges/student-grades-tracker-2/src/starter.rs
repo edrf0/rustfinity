@@ -7,11 +7,13 @@ pub struct Student {
 
 impl Student {
     pub fn add_grade(&mut self, grade: u8) {
-        // Implement here
+        // Implement here add_grade: Add a grade to the student’s grades vector.
+        self.grades.push(grade);
     }
 
     pub fn average_grade(&self) -> f64 {
         // Implement here
+        self.grades.iter().sum::<u8>() as f64 / self.grades.len() as f64
     }
 }
 
