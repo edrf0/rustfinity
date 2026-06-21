@@ -1,9 +1,15 @@
 pub fn read_file_to_string(path: &str) -> String {
     // 1. Implement the function
+    let file_handler = File::open(path).expect("Failed to read path: {}",path);
+    let mut reader = BufReader::new(file_handler);
+    let mut contents = String::new();
+    let _ = reader.read_to_string(&mut contents).expect("Failed to read contents!");
+    contents
 }
 
 pub fn get_env_variable(key: &str) -> String {
     // 2. Implement the function
+    env::var(key).unwrap()
 }
 
 /// Example usage
