@@ -1,4 +1,10 @@
-pub fn longest // Finish the function
+pub fn longest<'a>(a:&'a str,b:&'a str) -> &'a str {
+    if a.len() >= b.len() {
+        return a;
+    } else {
+        return b;
+    }
+} // Finish the function
 
 // Example usage
 pub fn main() {
