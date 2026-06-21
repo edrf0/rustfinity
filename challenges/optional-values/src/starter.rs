@@ -1,5 +1,6 @@
 pub fn find_first_even(numbers: &[i32]) -> Option<i32> {
     // Your code here...
+    numbers.iter().find_map(|number| *number % 2 == 0)
 }
 
 // Example usage
