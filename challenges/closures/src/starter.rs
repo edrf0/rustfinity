@@ -1,3 +1,12 @@
+/*Your task is to complete the implementation of the following closures:
+
+add_closure: This closure should return the sum of two integers.
+subtract_closure: This closure should return the difference between two integers.
+multiply_closure: This closure should return the product of two integers.
+Requirements
+Each closure should take two parameters of type i32.
+Each closure should return a result of type i32.*/
+
 pub fn create_closures() -> (
     impl Fn(i32, i32) -> i32,
     impl Fn(i32, i32) -> i32,
@@ -5,14 +14,15 @@ pub fn create_closures() -> (
 ) {
     let add_closure = |a, b| {
         // Step 1: Implement here
+        a+b
     };
 
     // Step 2:
     // Create the `subtract_closure` closure that subtracts two `i32` values.
-
+    let subtract_closure = |a, b| { a-b };
     // Step 3:
     // Create the `multiply_closure` closure that multiplies two `i32` values.
-
+    let multiply_closure = |a, b| { a * b };
     (add_closure, subtract_closure, multiply_closure)
 }
 
