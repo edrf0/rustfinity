@@ -1,5 +1,21 @@
+use std::collections::HashSet;
+
 // 1. Finish the function
-// pub fn unique_items ...
+pub fn unique_items(iter: impl Iterator<Item = String>) -> Vec<String>  {
+    let mut set = HashSet::new();
+    let mut results = Vec::new();
+    for element in iter {
+        let element = element.trim();
+        if element.is_empty() {
+            continue;
+        }
+        if !set.contains(&element) {
+            set.insert(element);
+            results.push(element);
+        }
+    }
+    results
+}
 
 /// Example usage
 pub fn main() {
