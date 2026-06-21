@@ -1,17 +1,5 @@
 [
   {
-    "id": 68,
-    "title": "Returning impl Trait",
-    "slug": "return-impl-trait",
-    "short_description": "Use `impl Trait` syntax to return an iterator that filters strings starting with a keyword.",
-    "language": "RUST",
-    "difficulty": "EASY",
-    "track": "RUST_BASICS",
-    "tags": ["iterators", "impl Trait", "rust"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
     "id": 69,
     "title": "Return Trait Objects",
     "slug": "return-trait-objects",

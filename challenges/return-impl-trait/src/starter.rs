@@ -1,5 +1,7 @@
 // Finish the function
-pub fn filter_starts_with
+pub fn filter_starts_with<'a>(input: &'a[String], prefix: &'a str) -> impl Iterator<Item=&'a str> {
+    input.iter().filter(|line| line.starts_with(prefix))
+}
 
 // Example usage
 pub fn main() {
