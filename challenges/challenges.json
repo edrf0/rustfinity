@@ -1,17 +1,5 @@
 [
   {
-    "id": 70,
-    "title": "Trait Objects",
-    "slug": "trait-objects",
-    "short_description": "Learn how to use trait objects as fields in structs for dynamic behavior in Rust.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": ["traits", "polymorphism", "structs", "dynamic behavior"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
     "id": 71,
     "title": "Associated types",
     "slug": "associated-types",
