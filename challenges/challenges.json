@@ -1,17 +1,5 @@
 [
   {
-    "id": 65,
-    "title": "Generics",
-    "slug": "generics",
-    "short_description": "Use generics with traits to create reusable and flexible code.",
-    "language": "RUST",
-    "difficulty": "EASY",
-    "track": "RUST_BASICS",
-    "tags": ["generics", "traits", "reusability", "polymorphism"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
     "id": 66,
     "title": "Trait Bounds",
     "slug": "trait-bounds",

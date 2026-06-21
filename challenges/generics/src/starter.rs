@@ -1,10 +1,14 @@
 // TODO: Define a generic struct with a single field `item: T`.
-pub struct ItemContainer {
+pub struct ItemContainer<T> {
     // Add the field here
+    pub item: T,
 }
 
 impl<T> ItemContainer<T> {
     // TODO: Implement the `get_item` method to return a reference to the item.
+    pub fn get_item(&self) -> &T {
+        &self.item
+    }
 }
 
 // Example usage
