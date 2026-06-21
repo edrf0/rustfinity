@@ -1,17 +1,5 @@
 [
   {
-    "id": 69,
-    "title": "Return Trait Objects",
-    "slug": "return-trait-objects",
-    "short_description": "Learn to create and return trait objects in Rust using Box<dyn Trait>.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": ["traits", "polymorphism", "trait objects"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
     "id": 70,
     "title": "Trait Objects",
     "slug": "trait-objects",
