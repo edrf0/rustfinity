@@ -1,10 +1,13 @@
 pub fn filter_even_numbers(iter: impl Iterator<Item = i32>) -> Vec<i32> {
     // 1. Finish the function
+    iter.filter(|&n| n % 2 != 0).collect()
 }
 
 
 // 2. Finish the function here
-pub fn uppercase_strings
+pub fn uppercase_strings(iter: impl Iterator<Item = char>) -> String {
+    iter.map(|c| c.to_uppercase()).collect()
+}
 
 // Example usage
 pub fn main() {
