@@ -1,4 +1,6 @@
-pub fn print_message // Finish the function
+pub fn print_message<T: AsRef<str>>(s:T){
+    println!("{}", s.as_ref());
+} // Finish the function
 
 // Example usage
 pub fn main() {

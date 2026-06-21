@@ -1,17 +1,5 @@
 [
   {
-    "id": 67,
-    "title": "The AsRef Trait",
-    "slug": "the-as-ref-trait",
-    "short_description": "Implement a function that uses the AsRef trait to work seamlessly with borrowed string types.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": ["traits", "Into", "generics"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
     "id": 6,
     "title": "The From trait",
     "slug": "the-from-trait",
