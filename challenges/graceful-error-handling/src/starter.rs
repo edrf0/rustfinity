@@ -1,5 +1,10 @@
 pub fn parse_percentage(input: &str) -> Result<u8, String> {
     // TODO: Implement the function here
+    match input.parse::<u8>() {
+        Ok(num @ 0..=100) => Ok(num),
+        Ok(_) => Err(format!("Percentage out of range")),
+        Err(_) => Err(format!("Invalid input"))
+    }
 }
 
 // Example usage
