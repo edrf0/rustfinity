@@ -1,6 +1,13 @@
+use std::io::Error;
+
 pub fn get_first_element(numbers: Vec<i32>, min_value: i32) -> Result<i32, String> {
     // Finish the function
-    let first_element = numbers.first(); // <- Returns an Option<&i32>
+    let first_element = numbers.first().ok_or("Vector is empty")?; // <- Returns an Option<&i32>
+    if *first_element >= min_value {
+        Ok(*first_element)
+    } else {
+        Err("First element is below the minimum allowed value")
+    }
 }
 
 // Example usage
