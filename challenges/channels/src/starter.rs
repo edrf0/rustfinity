@@ -1,3 +1,23 @@
+/*Implement three key functions that work with a message processing system:
+
+create_message_channel() - Creates a channel for sending Message structs
+create_producer_thread() - Creates a thread that analyzes and forwards messages
+create_consumer_thread() - Creates a thread that formats and collects messages
+
+Requirements
+
+Producer Thread
+
+
+Consumer Thread
+Receives messages until the channel is closed
+Formats each message as: [PRIORITY|SENDER_ID] CONTENT where PRIORITY is one of: LOW, MED, HIGH, CRIT
+Returns a vector of formatted message strings
+
+Notes
+Ignore error handling, you can simply unwrap()
+Have a look at the main function to see how the functions are used.*/
+
 use std::sync::mpsc::{self, Receiver, Sender};
 use std::thread::{self, JoinHandle};
 
@@ -16,12 +36,34 @@ pub struct Message {
 
 pub fn create_message_channel() -> (Sender<Message>, Receiver<Message>) {
     // 1. Implement this function to create and return a message channel
+    let (sender, receiver) = mpsc::channel();
+    (sender, receiver)
 }
 
 pub fn create_producer_thread(messages: Vec<Message>, tx: Sender<Message>) -> JoinHandle<()> {
     // TODO: Create a thread that:
     // - Updates the priority based on content
     // - Sends the updated message through the channel
+    /*
+    Receives a vector of messages and a sender channel
+    Updates priority based on content keywords:
+    "ERROR" → Critical
+    "WARNING" → High
+    "DEBUG" → Medium
+    Others become Low
+    Sends each updated message through the channel
+    */
+    thread::spawn(move || {
+        for message in messages {
+            message.priority = match true {
+                _ if message.content.contains("ERROR")   => Priority::Critical,
+                _ if message.content.contains("WARNING") => Priority::High,
+                _ if message.content.contains("DEBUG")   => Priority::Medium,
+                _                                            => Priority::Low,
+            };
+            tx.send(message).unwrap();
+        }
+    })
 }
 
 pub fn create_consumer_thread(rx: Receiver<Message>) -> JoinHandle<Vec<String>> {
@@ -29,6 +71,19 @@ pub fn create_consumer_thread(rx: Receiver<Message>) -> JoinHandle<Vec<String>> 
     // - Receives messages from the channel
     // - Formats them as "[PRIORITY|SENDER_ID] CONTENT"
     // - Returns a vector of formatted messages
+    thread::spawn(move || {
+        let mut messages: Vec<String> = Vec::new();
+        loop {
+            match rx.recv() {
+                Ok(message) => {
+                    messages.push(
+                        format!("[{}|{}] {}"),message.priority,message.sender_id,message.content);
+                },
+                Err(_) => break,
+            }
+        }
+        messages
+    })
 }
 
 // Example Usage
