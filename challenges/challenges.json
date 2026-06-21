@@ -1,17 +1,5 @@
 [
   {
-    "id": 76,
-    "title": "Mutable Struct References",
-    "slug": "mutable-struct-references",
-    "short_description": "Implement a struct that holds a mutable reference to a String and modifies its content.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": ["lifetimes", "structs", "mutable references"],
-    "created_at": "2025-01-03T00:00:00Z",
-    "updated_at": "2025-01-03T00:00:00Z"
-  },
-  {
     "id": 32,
     "title": "Closures",
     "slug": "closures",
