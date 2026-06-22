@@ -1,31 +1,27 @@
 /// Remove leading and trailing whitespace, then convert to lowercase.
 pub fn clean_string(s: &str) -> String {
-    // TODO: Trim the string and convert to lowercase
-    unimplemented!()
+    s.trim().to_string()
 }
 
 /// Check if the text contains the given word (case-insensitive).
 pub fn contains_word(text: &str, word: &str) -> bool {
-    // TODO: Check if text contains word, ignoring case
-    unimplemented!()
+    text.contains(word)
 }
 
 /// Replace all occurrences of `from` with `to`.
 pub fn replace_word(text: &str, from: &str, to: &str) -> String {
-    // TODO: Replace all occurrences of `from` with `to`
-    unimplemented!()
+    text.replace(from, to)
 }
 
 /// Split the string by the delimiter and trim each part.
 pub fn split_and_trim(s: &str, delimiter: char) -> Vec<String> {
-    // TODO: Split by delimiter, trim each part, and collect into Vec<String>
-    unimplemented!()
+    s.split(delimiter).collect()
 }
 
 /// Replace all sequences of whitespace with a single space, and trim.
 pub fn normalize_whitespace(s: &str) -> String {
     // TODO: Normalize whitespace to single spaces and trim
-    unimplemented!()
+    s.split_whitespace().collect::<Vec<&str>>().join(" ")
 }
 
 pub fn main() {

@@ -2,21 +2,22 @@ use std::str::FromStr;
 
 /// Parse a string into an i32, returning a descriptive error message on failure.
 pub fn parse_int(s: &str) -> Result<i32, String> {
-    // TODO: Parse the string as an i32
-    unimplemented!()
+    s.parse::<i32>()
 }
 
 /// Parse common boolean representations (case-insensitive).
 /// Accepts: "true", "false", "1", "0", "yes", "no"
 pub fn parse_bool(s: &str) -> Result<bool, String> {
-    // TODO: Match on the lowercase version of the string
-    unimplemented!()
+    s.parse::<bool>()
 }
 
 /// Parse a "key=value" string into a tuple.
 pub fn parse_key_value(s: &str) -> Result<(String, String), String> {
-    // TODO: Split the string at '=' and return (key, value)
-    unimplemented!()
+    let s = s.split('=');
+    match (s.next(), s.next()) {
+        (Some(key), Some(value)) => (key.to_string(), value.to_string()),
+        (_, _) => Err(String::from("Expected key and value")),
+    }
 }
 
 /// A color represented by red, green, and blue components.
@@ -33,15 +34,26 @@ impl FromStr for Color {
     type Err = String;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        // TODO: Parse the "r,g,b" format
-        unimplemented!()
+        let color_array = s.split(',');
+        match (color_array.next(), color_array.next(), color_array.next()) {
+            (Some(r), Some(g), Some(b)) => Ok(Color { r, g, b }),
+            _ => Err(String::from("Expected color")),
+        }
     }
 }
 
 /// Parse a delimited list of values into a Vec.
 pub fn parse_list<T: FromStr>(s: &str, delimiter: char) -> Result<Vec<T>, String> {
     // TODO: Split by delimiter, parse each part, collect into Result<Vec<T>, String>
-    unimplemented!()
+    let list_iter = s.split(delimiter);
+    let mut result = Vec::new();
+    for element in list_iter {
+        match element.parse() {
+            Ok(element) => result.push(element),
+            Err(_) => return Err(format!("Could not parse element {}", element)),
+        }
+    }
+    Ok(result)
 }
 
 pub fn main() {

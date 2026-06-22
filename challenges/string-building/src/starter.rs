@@ -2,16 +2,16 @@ use std::fmt::{self, Display, Formatter, Write};
 
 /// Build a greeting message using format!
 pub fn build_greeting(name: &str, age: u32) -> String {
-    // TODO: Use format!() to create a greeting
-    // Format: "Hello, {name}! You are {age} years old."
-    unimplemented!()
+    format!("Hello, {name}! You are {age} years old.")
 }
 
 /// Build a numbered list from items using write!
 pub fn build_list(items: &[&str]) -> String {
-    // TODO: Create a numbered list using std::fmt::Write
-    // Format: "1. item1\n2. item2\n3. item3"
-    unimplemented!()
+    let buffer = String::new();
+    for (index,item) in items.iter().enumerate() {
+        buffer.push_str(write!("{}. {}{}", index + 1, item, index + 1));
+    }
+    buffer
 }
 
 /// A person with a name and age.
@@ -25,8 +25,7 @@ pub struct Person {
 // Format: "Name (Age years old)"
 impl Display for Person {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        // TODO: Write the person's info in the format
-        unimplemented!()
+        write!(f, "{} ({} years old)", self.name, self.age)
     }
 }
 
@@ -40,19 +39,11 @@ impl Display for Person {
 /// | Bob   | 25  |
 /// ```
 pub fn build_table(headers: &[&str], rows: &[Vec<String>]) -> String {
-    // TODO: Build a formatted table
-    // Steps:
-    // 1. Calculate column widths (max of header and cell values)
-    // 2. Build header row with pipes: | Header1 | Header2 |
-    // 3. Build separator row: |---------|---------|
-    // 4. Build each data row: | Value1  | Value2  |
     unimplemented!()
 }
 
 /// Concatenate strings with a separator without using .join()
 pub fn concat_with_separator(parts: &[&str], sep: &str) -> String {
-    // TODO: Join the parts with the separator
-    // Don't use the .join() method - implement it manually
     unimplemented!()
 }
 
