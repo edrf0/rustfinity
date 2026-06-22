@@ -13,11 +13,22 @@ pub struct RedisPort(pub u16);
 
 #[macro_export]
 macro_rules! config_default_impl {
-    // TODO: Implement the macro here
+    ($s:ident,$val:expr) => {
+        impl ConfigDefault for $s {
+            fn get_default() -> Self {
+                $s($val)
+            }
+        }
+    }
 }
 
-// TODO: Use the macro to implement ConfigDefault for each type
-
+config_default_impl!(ConnectionTimeout, 30);
+config_default_impl!(MaxConnections, 100);
+config_default_impl!(RetryAttempts, 3);
+config_default_impl!(PostgresPort, 5432);
+config_default_impl!(MySQLPort, 3306);
+config_default_impl!(MongoPort, 27017);
+config_default_impl!(RedisPort, 6379);
 // Example usage
 pub fn main() {
     // let's say we have a new struct

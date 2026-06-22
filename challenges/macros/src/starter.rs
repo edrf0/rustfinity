@@ -1,6 +1,5 @@
 #[macro_export]
 macro_rules! math_operations {
-    // TODO: Implement the macro
     ($a:expr, $op:expr, $b:expr) => {
         match $op {
             '+' | "+" => format!("{} + {} = {}", $a, $b, $a + $b),
