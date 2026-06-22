@@ -1,6 +1,26 @@
 #[macro_export]
 macro_rules! math_operations {
     // TODO: Implement the macro
+    ($a:expr, $op:expr, $b:expr) => {
+        match $op {
+            '+' | "+" => format!("{} + {} = {}", $a, $b, $a + $b),
+            '-' | "-" => format!("{} - {} = {}", $a, $b, $a - $b),
+            '*' | "*" => format!("{} * {} = {}", $a, $b, $a * $b),
+            '/' | "/" => {
+                if $b == 0 {
+                    panic!("Division by zero");
+                }
+                format!("{} / {} = {}", $a, $b, $a / $b)
+            }
+            '%' | "%" => {
+                if $b == 0 {
+                    panic!("Division by zero");
+                }
+                format!("{} % {} = {}", $a, $b, $a % $b)
+            }
+            _ => panic!("Unsupported operator: {} ",$op),
+        }
+    }
 }
 
 // Example usage
