@@ -1,6 +1,31 @@
 #[proc_macro_derive(Describe)]
 pub fn derive_describe(input: TokenStream) -> TokenStream {
-    // TODO: Implement the procedural macro here
+    let input = parse_macro_input!(input as syn::DeriveInput);
+    let name = input.ident;
+
+    let fields = match input.data {
+        syn::Data::Struct(s) => match s.fields {
+            syn::Fields::Named(fields) => fields.named,
+            syn::Fields::Unnamed(..) => panic!("Unnamed fields are not supported"),
+        }
+        _ => panic!("Only structs can derive Describe yet"),
+    };
+
+    let field_descriptors = fields.iter().map(|f| {
+        let name = &f.ident;
+        quote! { format!("{}: {:?}", stringify!(#name), &self.#name) }
+    });
+
+    let expanded = quote! {
+        impl Describe for #name {
+            fn describe(&self) -> String {
+                let fields = vec![#(#field_descriptors),*].join(", ");
+                format!("{} {{ {} }}", stringify!(#name), fields)
+            }
+        }
+    };
+
+    expanded.into()
 }
 
 // Example Test
