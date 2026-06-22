@@ -3,9 +3,27 @@ pub struct AppConfig {
     pub theme: String,
     pub notifications_enabled: bool,
     pub max_users: u32,
+    pub auto_save: bool,
+    pub cache_size: u32,
+    pub log_level: String,
+    pub retry_attempts: u32,
+    pub timeout_seconds: u32,
 }
 
-// TODO: implement the `Default` trait for `AppConfig`
+impl Default for AppConfig {
+    fn default() -> Self {
+        AppConfig {
+            theme: String::from("Light"),
+            notifications_enabled: false,
+            max_users: 10,
+            auto_save: true,
+            cache_size: 512,
+            log_level: String::from("INFO"),
+            retry_attempts: 3,
+            timeout_seconds: 30,
+        }
+    }
+}
 
 // Example usage
 pub fn main() {
