@@ -3,6 +3,7 @@ use std::thread::{self, JoinHandle};
 
 pub fn create_shared_data<T>(initial: T) -> Arc<Mutex<T>> {
     // 1. Initialize and return a new Arc<Mutex<T>> with the initial value
+    Arc::new(Mutex::new(initial))
 }
 
 pub fn increment_counter(
@@ -11,6 +12,15 @@ pub fn increment_counter(
     increments: usize,
 ) -> Vec<JoinHandle<()>> {
     // 2. Increment the counter by the given increments using the given number of threads
+    let vec_handles: Vec<JoinHandle<()>> = Vec::new();
+    for _ in 0..threads {
+        let counter_clone = Arc::clone(&counter);
+        let handle = thread::spawn(move || {
+            *counter_clone.lock().unwrap() += increments as i32;
+        });
+        vec_handles.push(handle);
+    }
+    vec_handles
 }
 
 pub fn modify_shared_data<T: Send + 'static>(
@@ -18,6 +28,10 @@ pub fn modify_shared_data<T: Send + 'static>(
     modifier: fn(&mut T),
 ) -> JoinHandle<()> {
     // 3. Use a new thread to modify the shared data
+    thread::spawn(move || {
+        let mut data = data.lock().unwrap();
+        modifier(&mut *data);
+    })
 }
 
 // Example usage
