@@ -8,6 +8,32 @@ pub enum BookItem {
 
 impl BookItem {
     // TODO: Finish the implementation
+    pub fn check_validity(&self) -> bool {
+        match self {
+            BookItem::Book { pages, discount } => {
+                if pages > 0 && (discount >= 0 && discount <= 50) {
+                    true
+                } else { false }
+            },
+            BookItem::EBook(title, (_, b)) => {
+                if !title.is_empty() && b > 0 {
+                    true
+                } else { false }
+            },
+            BookItem::Collection(items) => {
+                if items.is_empty() {
+                    return false;
+                }
+                for item in items {
+                    if !self.check_validity(item) {
+                        return false;
+                    }
+                }
+                true
+            },
+            BookItem::OutOfPrint => false,
+        }
+    }
 }
 
 // Example usage
