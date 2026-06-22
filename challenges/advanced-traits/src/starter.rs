@@ -1,8 +1,20 @@
+/*Define two structs: Millimeters and Meters, each holding a single u32 value
+Implement the Add<Meters> trait for Millimeters to handle addition with Meters
+Conversion rules:
+1 meter = 1000 millimeters
+When adding, convert meters to millimeters first
+Return the result as Millimeters*/
+
 pub struct Millimeters(pub u32);
 pub struct Meters(pub u32);
 
 // Implement the Add trait
-
+impl Add<Meters> for Millimeters {
+    type Output = Millimeters;
+    fn add(self, other: Meters) -> Millimeters {
+        Millimeters(self.0 + (other.0 * 1000))
+    }
+}
 // Example usage
 pub fn main() {
     let length1 = Millimeters(1500);
