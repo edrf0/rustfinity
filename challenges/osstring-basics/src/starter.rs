@@ -3,41 +3,35 @@ use std::path::Path;
 
 /// Convert a `&str` to an `OsString`.
 pub fn to_os_string(s: &str) -> OsString {
-    // TODO: Convert the string
-    unimplemented!()
+    s.to_os_string()
 }
 
 /// Try to convert an `OsStr` to `&str`.
 /// Returns `None` if the `OsStr` is not valid UTF-8.
 pub fn os_str_to_str(os: &OsStr) -> Option<&str> {
-    // TODO: Convert OsStr to str
-    unimplemented!()
+    os.to_str()
 }
 
 /// Convert `OsStr` to `String`, replacing invalid UTF-8 with the replacement character.
 pub fn os_string_to_string_lossy(os: &OsStr) -> String {
-    // TODO: Convert to String with lossy conversion
-    unimplemented!()
+    os.to_string_lossy().to_string()
 }
 
 /// Extract the file extension from a path as a `String`.
 /// Returns `None` if there is no extension or if the extension isn't valid UTF-8.
 pub fn get_file_extension(path: &Path) -> Option<String> {
-    // TODO: Extract the extension
-    unimplemented!()
+    path.extension()
 }
 
 /// Join multiple path components into a single `OsString` path.
 /// Uses the platform-appropriate path separator.
 pub fn join_path_components(components: &[&str]) -> OsString {
-    // TODO: Join the components
     unimplemented!()
 }
 
 /// Check if an `OsStr` contains valid UTF-8.
 pub fn is_valid_utf8(os: &OsStr) -> bool {
-    // TODO: Check if valid UTF-8
-    unimplemented!()
+    os.is_ascii()
 }
 
 pub fn main() {

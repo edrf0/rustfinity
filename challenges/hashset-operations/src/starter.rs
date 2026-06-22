@@ -2,44 +2,42 @@ use std::collections::HashSet;
 
 /// Returns a HashSet containing only the unique elements from the input slice.
 pub fn unique_elements(items: &[i32]) -> HashSet<i32> {
-    // TODO: Collect items into a HashSet
-    unimplemented!()
+    items.iter().map(|&i| i).collect()
 }
 
 /// Returns the count of unique elements in the input slice.
 pub fn count_unique(items: &[i32]) -> usize {
-    // TODO: Count unique elements
-    unimplemented!()
+    items.iter().map(|&i| i).collect::<HashSet<i32>>().len()
 }
 
 /// Returns elements that appear in both sets (intersection).
 pub fn find_common(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32> {
-    // TODO: Find intersection
-    unimplemented!()
+    set1.intersection(&set2).collect()
 }
 
 /// Returns elements that appear in either set (union).
 pub fn find_all(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32> {
-    // TODO: Find union
-    unimplemented!()
+    set1.union(&set2).collect()
 }
 
 /// Returns elements in set1 that are not in set2 (difference).
 pub fn find_difference(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32> {
-    // TODO: Find difference
-    unimplemented!()
+    set1.difference(&set2).collect()
 }
 
 /// Returns elements that are in exactly one of the sets (symmetric difference).
 pub fn find_symmetric_difference(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32> {
-    // TODO: Find symmetric difference
-    unimplemented!()
+    set1.symmetric_difference(&set2).collect()
 }
 
 /// Checks if all elements of potential_subset are contained in potential_superset.
 pub fn is_subset(potential_subset: &HashSet<i32>, potential_superset: &HashSet<i32>) -> bool {
-    // TODO: Check subset relationship
-    unimplemented!()
+    for element in potential_subset {
+        if !potential_superset.contains(element) {
+            return false;
+        }
+    }
+    true
 }
 
 pub fn main() {

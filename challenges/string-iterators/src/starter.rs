@@ -1,36 +1,30 @@
 /// Convert a string into a vector of its characters.
 pub fn chars_to_vec(s: &str) -> Vec<char> {
-    // TODO: Use .chars() and .collect()
-    unimplemented!()
+    s.chars().collect()
 }
 
 /// Split a string on whitespace and collect into owned strings.
 pub fn words_to_vec(s: &str) -> Vec<String> {
-    // TODO: Use .split_whitespace() and collect
-    unimplemented!()
+    s.split_whitespace().collect()
 }
 
 /// Split a string on line endings and collect into owned strings.
 pub fn lines_to_vec(s: &str) -> Vec<String> {
-    // TODO: Use .lines() and collect
-    unimplemented!()
+    s.lines().collect()
 }
 
 /// Count the number of whitespace-separated words.
 pub fn count_words(s: &str) -> usize {
-    // TODO: Use .split_whitespace() and .count()
-    unimplemented!()
+    s.split_whitespace().count()
 }
 
 /// Reverse the order of words in a string (keep words themselves intact).
 pub fn reverse_words(s: &str) -> String {
-    // TODO: Split into words, reverse the order, then join with spaces
-    unimplemented!()
+    s.split_whitespace().rev().join(" ")
 }
 
 /// Capitalize the first letter of each word.
 pub fn capitalize_words(s: &str) -> String {
-    // TODO: Make the first character uppercase and rest lowercase
     unimplemented!()
 }
 
